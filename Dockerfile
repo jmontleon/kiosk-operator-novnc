@@ -6,9 +6,9 @@ RUN dnf -y update && \
                    net-tools \
                    procps-ng \
                    python3-pip \
-                   python3-websockify \
                    which \
     && dnf clean all
+RUN pip3 install websockify 
 RUN git clone https://github.com/novnc/novnc
 RUN ln -sf /novnc/vnc.html /novnc/index.html
 ENTRYPOINT /novnc/utils/novnc_proxy --vnc localhost:5901
