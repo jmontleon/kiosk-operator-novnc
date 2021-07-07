@@ -11,4 +11,4 @@ RUN dnf -y update && \
     && dnf clean all
 RUN git clone https://github.com/novnc/novnc
 RUN ln -sf /novnc/vnc.html /novnc/index.html
-ENTRYPOINT /novnc/utils/launch.sh --vnc localhost:5901
+ENTRYPOINT /novnc/utils/novnc_proxy --vnc localhost:5901
